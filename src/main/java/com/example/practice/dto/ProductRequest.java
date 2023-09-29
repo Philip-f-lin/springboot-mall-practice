@@ -1,32 +1,24 @@
-package com.example.practice.model;
+package com.example.practice.dto;
 
 import com.example.practice.constant.ProductCategory;
-import lombok.Data;
-import org.springframework.data.relational.core.sql.In;
 
-import java.sql.Timestamp;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+public class ProductRequest {
 
-public class Product {
-
-    private Integer productId;
+    @NotNull
     private String productName;
+    @NotNull
     private ProductCategory category;
+    @NotNull
     private String imageUrl;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer stock;
+
     private String description;
-    private Date createdDate;
-    private Date last_modifiedDate;
-
-    public Integer getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Integer productId) {
-        this.productId = productId;
-    }
 
     public String getProductName() {
         return productName;
@@ -74,21 +66,5 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getLast_modifiedDate() {
-        return last_modifiedDate;
-    }
-
-    public void setLast_modifiedDate(Date last_modifiedDate) {
-        this.last_modifiedDate = last_modifiedDate;
     }
 }
