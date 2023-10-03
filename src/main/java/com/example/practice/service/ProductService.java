@@ -1,5 +1,6 @@
 package com.example.practice.service;
 
+import com.example.practice.constant.ProductCategory;
 import com.example.practice.dto.ProductRequest;
 import com.example.practice.model.Product;
 
@@ -14,5 +15,5 @@ public interface ProductService {
 
     void deleteProductById(Integer productId);
 
-    List<Product> getProducts();
+    List<Product> getProducts(ProductCategory category, String search);
 }
