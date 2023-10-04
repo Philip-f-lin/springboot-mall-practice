@@ -1,6 +1,7 @@
 package com.example.practice.dao;
 
 import com.example.practice.constant.ProductCategory;
+import com.example.practice.dto.ProductQueryParams;
 import com.example.practice.dto.ProductRequest;
 import com.example.practice.model.Product;
 import org.springframework.data.relational.core.sql.In;
@@ -17,5 +18,5 @@ public interface ProductDao {
 
     void deleteProductById(Integer productId);
 
-    List<Product> getProducts(ProductCategory category, String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 }
