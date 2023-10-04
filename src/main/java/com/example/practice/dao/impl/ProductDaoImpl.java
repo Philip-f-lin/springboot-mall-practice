@@ -30,8 +30,6 @@ public class ProductDaoImpl implements ProductDao {
                 "price, stock, description, created_date, last_modified_date " +
                 "from product WHERE 1 = 1";
 
-
-
         Map<String, Object> map = new HashMap<>();
 
         if (productQueryParams.getCategory() != null){
@@ -43,6 +41,8 @@ public class ProductDaoImpl implements ProductDao {
             sql = sql + " AND product_name LIKE :search";
             map.put("search", '%' + productQueryParams.getSearch() + '%');
         }
+
+        sql = sql + " ORDER BY " + productQueryParams.getOrderBy() + " " + productQueryParams.getSort();
 
         List<Product> productList = namedParameterJdbcTemplate.query(sql, map, new ProductRowMapper());
 
